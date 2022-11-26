@@ -40,7 +40,7 @@ def like(like_id: str, liker_account_id: str, item_id: str, db: Session):
 
 # Get Like By Id's
 def get_like_by_id_s(item_id: str, account_id: str, db: Session) -> ItemLikes:
-    get_like = db.query(models.KPILibraryIndicatorLike).filter(
+    get_like = db.query(ItemLikes).filter(
         ItemLikes.item_id == item_id,
         ItemLikes.liker_account_id == account_id
     ).first()

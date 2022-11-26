@@ -56,7 +56,7 @@ def like_kpi_item(session: SessionInfo = Depends(get_session), item_id: str = Fo
             db.commit()
         elif like is None:
             like_id = str(uuid4())
-            kpi_library_data_list_rep.like(like_id, session.account_id, indicator_id, db)
+            like(like_id, session.account_id, indicator_id, db)
         else:
             print("Like is not found")
     except Exception as e:

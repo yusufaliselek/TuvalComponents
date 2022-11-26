@@ -48,7 +48,7 @@ def get_like_by_id_s(item_id: str, account_id: str, db: Session) -> ItemLikes:
 
 
 @router.post("/LikeOrUnlikeItem")
-def like_kpi_item(session: SessionInfo = Depends(get_session), item_id: str = Form(...), db: Session = Depends(get_db)):
+def like_item(session: SessionInfo = Depends(get_session), item_id: str = Form(...), db: Session = Depends(get_db)):
     try:
         like = get_like_by_id_s(item_id, session.account_id, db)
         if like is not None:
